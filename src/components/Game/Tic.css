@@ -29,6 +29,7 @@
 }
 .board-row {
   display: flex;
+  backdrop-filter: blur(5px);
 }
 .status {
   margin-bottom: 10px;
