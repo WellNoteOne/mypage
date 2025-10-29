@@ -9,6 +9,7 @@ import Game from "./components/Game/Tic";
 import "./App.css";
 import { useState } from "react";
 import BottomNav from "./components/BottomNavbar/BottomNavbar";
+import GravityFall from "./components/Gravity/Gravity";
 
 // import JokeButton from "./components/Joke/Joke";
 // import CameraButton from "./components/Camera/Camera";
@@ -34,6 +35,8 @@ function App() {
       <Contact />
       {/*<JokeButton /> на потом*/}
       {/*<CameraButton /> на потом */}
+      {/* <GravityFall /> */}
+
       <Footer />
       <BottomNav />
     </>

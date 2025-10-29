@@ -1,0 +1,57 @@
+.gravity-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.item {
+  width: 80px;
+  height: 80px;
+  background: lightseagreen;
+  border-radius: 12px;
+  position: relative;
+}
+
+.gravbut {
+  position: fixed;
+  bottom: 30px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.gravbut:hover {
+  background: #555;
+}
+
+/* Анимация падения */
+@keyframes gravity {
+  0% {
+    top: 0;
+    animation-timing-function: ease-in;
+  }
+  70% {
+    top: calc(100vh - 100px);
+    animation-timing-function: ease-out;
+  }
+  85% {
+    top: calc(100vh - 140px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    top: calc(100vh - 100px);
+  }
+}
+
+.fall {
+  animation: gravity 1.2s forwards;
+}
