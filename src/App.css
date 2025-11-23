@@ -44,6 +44,12 @@ button:focus {
     0 0 25px rgb(38, 255, 0);
   border: none;
 }
+.langBut {
+  position: absolute;
+  right: 0;
+  background-color: red;
+  opacity: 60%;
+}
 @media (max-width: 430px) {
   body {
     padding-bottom: 85px;

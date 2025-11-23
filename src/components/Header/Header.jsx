@@ -1,5 +1,8 @@
+// import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./Header.css";
 export default function Header() {
+  const { t } = useTranslation();
   return (
     <header>
       <div className="header">
@@ -8,11 +11,11 @@ export default function Header() {
           Sugai
         </h1>
         <nav className="nav">
-          <a href="#about">About</a>
+          <a href="#about"> {t("about")}</a>
 
-          <a href="#projects">Projects</a>
+          <a href="#projects"> {t("projects")}</a>
 
-          <a href="#contact">Contact</a>
+          <a href="#contact"> {t("contact")}</a>
         </nav>
       </div>
     </header>

@@ -1,5 +1,7 @@
 import "./About.css";
+import { useTranslation } from "react-i18next";
 export default function About() {
+  const { t } = useTranslation();
   return (
     <section id="about" className="about-section">
       <h3 className="about-title">
@@ -44,13 +46,12 @@ export default function About() {
         opportunities to contribute to meaningful projects that have real-world
         impact.
       </p>
-      <p>212</p>
       <a
         href={`${import.meta.env.BASE_URL}CV.pdf`}
         download="CV(Valentin).pdf"
         className="download-btn"
       >
-        Download My CV
+        {t("downloadCV")}
       </a>
     </section>
   );

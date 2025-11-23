@@ -1,5 +1,6 @@
 import "./Projects.css";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const projects = [
   {
@@ -14,14 +15,21 @@ const projects = [
     preview: "https://hobbly.azurewebsites.net/",
     desc: "Group project, which showing to you actual events in Helsinki ",
   },
+  {
+    title: "Slush search app",
+    link: "https://slush-fs.onrender.com",
+    preview: "https://slush-fs.onrender.com",
+    desc: "Small project for fast searching speaker in the Slush (2025)",
+  },
 ];
 
 export default function Projects() {
+  const { t } = useTranslation();
   const [fullscreen, setFullscreen] = useState(null); // хранит активный проект
   return (
     <section id="projects" className="projects-section">
       <div className="projects-header">
-        <h3 className="projects-title">My Projects</h3>
+        <h3 className="projects-title">{t("projectsTitle")}</h3>
       </div>{" "}
       <div className="projects-grid">
         {projects.map((p, i) => (
@@ -35,7 +43,7 @@ export default function Projects() {
             <h4 className="project-title">{p.title}</h4>
             <p className="project-desc">{p.desc}</p>
             <a href={p.link} target="_blank" className="project-link">
-              Open →
+              {t("open")}
             </a>
           </div>
         ))}

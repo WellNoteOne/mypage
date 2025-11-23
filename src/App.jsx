@@ -10,12 +10,14 @@ import "./App.css";
 import { useState } from "react";
 import BottomNav from "./components/BottomNavbar/BottomNavbar";
 import GravityFall from "./components/Gravity/Gravity";
+import { useTranslation } from "react-i18next";
 
 // import JokeButton from "./components/Joke/Joke";
 // import CameraButton from "./components/Camera/Camera";
 
 function App() {
   const [showGame, setShowGame] = useState(false);
+  const { i18n } = useTranslation();
 
   const toggleGame = () => {
     setShowGame(!showGame);
@@ -24,6 +26,14 @@ function App() {
   return (
     <>
       <MatrixBackground />
+      <button
+        className="langBut"
+        onClick={() => {
+          i18n.changeLanguage(i18n.language === "en" ? "ru" : "en");
+        }}
+      >
+        {i18n.language.toUpperCase()}
+      </button>
       <Header />
       <Hero />
       <button className="gamebut" onClick={toggleGame}>
